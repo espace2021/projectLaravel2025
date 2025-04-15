@@ -3,9 +3,10 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [ProductController::class, 'index'])->name('index');
+Route::get('/myproducts', [ProductController::class, 'index'])->name('index');
 
 Route::get('/category/{id}', [CategoryController::class, 'products'])->where('id', '[0-9]+');
 
@@ -28,3 +29,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/', [TemplateController::class, 'index'])->name('index');
+Route::get('/products', [TemplateController::class, 'products'])->name('products');
+Route::get('/furniture', [TemplateController::class, 'furniture'])->name('furniture');
+Route::get('/checkout', [TemplateController::class, 'checkout'])->name('checkout');
