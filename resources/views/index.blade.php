@@ -6,6 +6,7 @@
         <a href="/"><i class="fas fa-fw fa-tb"></i>Electronics Product List</a>
         <div class="push-right">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+                     
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     @auth
@@ -36,6 +37,7 @@
         </header>
             <a href="/new/category"><i class="fas fa-fw fa-plus"></i> New Category</a>
             <a href="/new/product"><i class="fas fa-fw fa-plus"></i> New Product</a>
+            <a href="{{ url('/generate-pdf') }}" <i class="fas fa-fw fa-file-pdf"></i> PDF </a>
         </div>
     </div>
         <div class="one-to-many">

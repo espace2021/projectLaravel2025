@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 
 Route::get('/myproducts', [ProductController::class, 'index'])->name('index');
 
@@ -34,3 +35,7 @@ Route::get('/', [TemplateController::class, 'index'])->name('index');
 Route::get('/products', [TemplateController::class, 'products'])->name('products');
 Route::get('/furniture', [TemplateController::class, 'furniture'])->name('furniture');
 Route::get('/checkout', [TemplateController::class, 'checkout'])->name('checkout');
+
+
+    
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
